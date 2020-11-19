@@ -37,8 +37,9 @@ def subtitles():
     my_list = sub.readlines()
     print("ORIGINAL" + str(my_list))
 
-    result = [letter.replace('ã', 'ă') for letter in my_list]
-    print("RESULT!! : " + str(result))
+    result = [letter.replace('ã', 'a') for letter in my_list]
+    converted_result = ''.join([str(element) for element in result])
+    print("RESULT!! : " + str(converted_result))
     save_file(result)
 
 def open_file():
@@ -49,7 +50,7 @@ def open_file():
 
 def save_file(file):
     # SAVING RESULT ON THE FILE
-    subtitle_file2 = filedialog.askopenfilename(initialdir="C:/Users", title="Open File", filetypes=(("Subtitle Files", "*.srt"),))
+    subtitle_file2 = filedialog.askopenfilename(initialdir="C:/Users", title="Save File", filetypes=(("Subtitle Files", "*.srt"),))
     subtitle_file2 = open(subtitle_file2, 'w')
     subtitle_file2.write(str(file))
 
