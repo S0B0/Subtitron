@@ -32,6 +32,7 @@ edit_menu.add_command(label="Undo")
 edit_menu.add_command(label="Redo")
 
 
+
 def subtitles():
     sub = open_file()
     my_list = sub.readlines()
@@ -40,7 +41,8 @@ def subtitles():
     result = [letter.replace('ã', 'a') for letter in my_list]
     converted_result = ''.join([str(element) for element in result])
     print("RESULT!! : " + str(converted_result))
-    save_file(result)
+    save_file(converted_result)
+    #return str(converted_result)
 
 def open_file():
 
